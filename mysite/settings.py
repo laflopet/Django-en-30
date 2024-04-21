@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-2vg-$))f!2&5z&dy1rdy^rs#-3p(gc2tmdkwn@@1ida!%-a$6!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] 
+"""
+se usa para dar acceso odenegar acceso a ciertas ip.
+mientrs DEBUG = True esta opcion de ALLOWED_HOSTS no tiene importancia
+"""
 
 
 # Application definition
