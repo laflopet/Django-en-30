@@ -51,7 +51,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='commments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
@@ -59,7 +59,7 @@ class Comment(models.Model):
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
 
-    class Mete:
+    class Meta:
         ordering = ['created']
         indexes = [
             models.Index(fields=['created']),
