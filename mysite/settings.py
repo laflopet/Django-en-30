@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 se usa para dar acceso odenegar acceso a ciertas ip.
 mientrs DEBUG = True esta opcion de ALLOWED_HOSTS no tiene importancia
 """
-
+SITE_ID = 1
 
 # Application definition
 
@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig', #activar la app de blog
     'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -83,8 +86,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog_test',
+        'USER': 'blog',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'POST': '5432'
     }
 }
 
